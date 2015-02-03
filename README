@@ -1,0 +1,31 @@
+// EvohomeWirelessFW - RFBee firmware for evohome wireless communications
+// Copyright (c) 2015 Hydrogenetic
+//
+// based on HoneyCommLite - Alternative RFBee firmware to communicate with
+//                 Evohome / Hometronix / CM67z and other Honeywell 868MHz based RF devices.
+//
+// Copyright (C) 2012 JB137
+// Copyright (C) 2011 Wladimir Komarow
+//
+// and work from CrazyDiamond and others at http://www.domoticaforum.eu/viewtopic.php?f=7&t=5806
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// Compile for RFbee using board: Arduino Pro or Pro Mini (3.3V, 8MHz) w/ATmega 168
+
+This should work with Domoticz (http://www.domoticz.com/wiki/Evohome) to control evohome or you can control it directly via the serial interface if you use the correct protocol. This sketch can also serve as template for creation of an evohome compatible wireless device. 
+
+You will require an RFBee, probably a UartSBee (for USB serial connection to the RFBee) and you will also need the Arduino IDE from http://arduino.cc/en/main/software or via sudo apt-get install arduino. You select the board as above choose the appropriate serial device and select upload from the menu. 
+
+The default 8MHz clock speed will not allow the RFBee to operate smoothly at 115200 baud. There is a correction for this in the code but it is based on accurate factory calibration of the 8MHz clock speed and could therefore give variable results. Please note this means that the device is no longer running at the correct speed and you may need to correct any code you add to this sketch as a result. If you don't require 115200 baud operation you can comment out the OSCCAL line at the beginning of setup().
