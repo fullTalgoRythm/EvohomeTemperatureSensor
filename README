@@ -26,7 +26,7 @@
 
 This should work with Domoticz (http://www.domoticz.com/wiki/Evohome) to control evohome or you can control it directly via the serial interface if you use the correct protocol. This sketch can also serve as template for creation of an evohome compatible wireless device. 
 
-You will require an RFBee, probably a UartSBee (for USB serial connection to the RFBee) and you will also need the Arduino IDE from http://arduino.cc/en/main/software or via sudo apt-get install arduino. You select the board as above choose the appropriate serial device and select upload from the menu. 
+You will require an RFBee, probably a UartSBee (for USB serial connection to the RFBee) and you will also need the Arduino IDE from http://arduino.cc/en/main/software or via sudo apt-get install arduino. Once you have the IDE installed you should copy the sketch (EvohomeWirelessFW folder) to your Sketchbook folder. You then select the board as above, choose the appropriate serial device and select upload from the menu. 
 
 The default 8MHz clock speed will not allow the RFBee to operate smoothly at 115200 baud. There is a correction for this in the code but it is based on accurate factory calibration of the 8MHz clock speed and could therefore give variable results. Please note this means that the device is no longer running at the correct speed and you may need to correct any code you add to this sketch as a result. If you don't require 115200 baud operation you can comment out the OSCCAL line at the beginning of setup().
 
